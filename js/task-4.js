@@ -1,27 +1,28 @@
-// const formatString = function (string) {
-//     const maxWords = 40;
 
-//     if (string.length > maxWords) {
-//         string = string.slice(0, 39);
-//         string = `${string}...`
-//     }
-//     return string;
-// }
+const countTotalSalary = function (employees) {
+    let total = 0;
+    const values = Object.values(employees);
+    for (let value of values) {
+        total += value;
+    }
+    return total;
+};
 
-// console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-// // вернется оригинальная строка
 
-// console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-// // вернется форматированная строка
+console.log(countTotalSalary({})); // 0
 
-// console.log(formatString('Curabitur ligula sapien.'));
-// // вернется оригинальная строка
+console.log(
+    countTotalSalary({
+        mango: 100,
+        poly: 150,
+        alfred: 80,
+    }),
+); // 330
 
-// console.log(
-//     formatString(
-//         'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
-//     ),
-// );
-// //вернется форматированная строка
-const { name, age, ...props } = { name: 'Poly', age: 3, games: 47, isOnline: false };
-console.log({ props });
+console.log(
+    countTotalSalary({
+        kiwi: 200,
+        lux: 50,
+        chelsy: 150,
+    }),
+); // 400

@@ -1,19 +1,20 @@
-let input;
-let total = 0;
-const numbers = [];
+const products = [
+    { name: 'Радар', price: 1300, quantity: 4 },
+    { name: 'Сканер', price: 2700, quantity: 3 },
+    { name: 'Дроид', price: 400, quantity: 7 },
+    { name: 'Захват', price: 1200, quantity: 2 },
+];
 
-do {
-    input = prompt(`Введите число`);
-    let num = Number(input);
-    numbers.push(num);
-    if (input === null) {
-        alert('Пользователь отменил ввод')
+const calculateTotalPrice = function (allProdcuts, productName) {
+
+    for (const array of allProdcuts) {
+        if (array['name'] === productName) {
+            const { name, price, quantity } = array;
+            return price * quantity;
+        }
     }
-}
-while (input !== null)
-for (let i = 0; i < numbers.length; i++) {
-    total += numbers[i];
+};
 
-}
+console.log(calculateTotalPrice(products, 'Радар')); // 5200
 
-console.log(`Результат сложения чисел = ${total}`);
+console.log(calculateTotalPrice(products, 'Дроид')); // 2800
