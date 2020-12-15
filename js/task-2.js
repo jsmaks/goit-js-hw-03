@@ -1,13 +1,16 @@
 
 
 const countProps = function (obj) {
-
-    let count = 0;
-    const entries = Object.entries(obj);
-    for (const entry of entries) {
-        count++;
-    }
+    const count = Object.keys(obj).length;
     return count;
+
+    //-------Для Себя Оставлю----//
+    // let count = 0;
+    // const entries = Object.entries(obj);
+    // for (const entry of entries) {
+    //     count++;
+    // }
+    //--------END CODE-----//
 }
 
 

@@ -3,17 +3,25 @@ const findBestEmployee = function (employees) {
 
     const values = Object.values(employees);
     const maxQuantityTasks = Math.max(...values);
-    const entries = Object.entries(employees);
 
-    for (const entry of entries) {
-
-        const key = entry[0];
-        const value = entry[1];
-
-        if (value === maxQuantityTasks) {
-            return (`${key}: ${value}`);
+    for (const key in employees) {
+        if (employees[key] === maxQuantityTasks) {
+            return (`${key}: ${employees[key]}`);
         }
-    };
+    }
+    //--------ОСТАВИЛ ДЛЯ СЕБЯ КОД-------//
+    // const entries = Object.entries(employees);
+    // for (const entry of entries) {
+
+    //     const key = entry[0];
+    //     const value = entry[1];
+
+    //     if (value === maxQuantityTasks) {
+    //         return (`${key}: ${value}`);
+    //     }
+    // };
+    //--------END КОД--------------------//
+
 }
 console.log(
     findBestEmployee({
